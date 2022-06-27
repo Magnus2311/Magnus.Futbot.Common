@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Company>Magnus2311</Company>
+    <Product>Magnus.Futbot</Product>
+    <Version>0.0.2</Version>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>Magnus2311.Futbot.Common</PackageId>
+    <Authors>Magnus.Futbot.Common</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Bson" Version="2.16.1" />
+  </ItemGroup>
+
+</Project>
