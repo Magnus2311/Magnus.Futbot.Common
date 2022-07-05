@@ -1,6 +1,6 @@
 ﻿using MongoDB.Bson;
 
-namespace Magnus.Futbot.Common.Models
+namespace Magnus.Futbot.Common.Models.DTOs
 {
     public class ProfileDTO
     {
