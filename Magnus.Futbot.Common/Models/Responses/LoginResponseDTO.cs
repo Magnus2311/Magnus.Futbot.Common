@@ -1,4 +1,6 @@
-﻿namespace Magnus.Futbot.Common.Models.Responses
+﻿using Magnus.Futbot.Common.Models.DTOs;
+
+namespace Magnus.Futbot.Common.Models.Responses
 {
     public class LoginResponseDTO
     {
