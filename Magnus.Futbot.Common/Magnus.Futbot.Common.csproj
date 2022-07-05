@@ -6,14 +6,16 @@
     <Nullable>enable</Nullable>
     <Company>Magnus2311</Company>
     <Product>Magnus.Futbot</Product>
-    <Version>0.0.4</Version>
+    <Version>0.0.5</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>Magnus2311.Futbot.Common</PackageId>
     <Authors>Magnus.Futbot.Common</Authors>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Confluent.Kafka" Version="1.9.0" />
     <PackageReference Include="MongoDB.Bson" Version="2.16.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
 </Project>
