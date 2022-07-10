@@ -27,8 +27,10 @@ namespace Magnus.Futbot.Common.Models.Kafka
 
         protected IConfiguration Configuration { get; }
 
-        public void Produce(TValue value)
+        public Task Produce(TValue value)
             => Producer.ProduceAsync(Topic, new Message<TKey, TValue> { Value = value });
 
+        public Task Produce(TValue value, CancellationToken cancellationToken)
+            => Producer.ProduceAsync(Topic, new Message<TKey, TValue> { Value = value }, cancellationToken);
     }
 }
