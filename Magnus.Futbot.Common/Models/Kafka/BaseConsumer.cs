@@ -1,4 +1,5 @@
 ﻿using Confluent.Kafka;
+using Magnus.Futbot.Common.Models.Kafka.Serialization;
 using Microsoft.Extensions.Configuration;
 
 namespace Magnus.Futbot.Common.Models.Kafka
@@ -16,7 +17,9 @@ namespace Magnus.Futbot.Common.Models.Kafka
                 AutoOffsetReset = AutoOffsetReset.Earliest
             };
 
-            Consumer = new ConsumerBuilder<TKey, TValue>(config).Build();
+            Consumer = new ConsumerBuilder<TKey, TValue>(config)
+                .SetValueDeserializer(new Deserializer<TValue>)
+                .Build();
             Consumer.Subscribe(Topic);
         }
 

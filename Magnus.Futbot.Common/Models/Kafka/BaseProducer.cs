@@ -1,4 +1,5 @@
 ﻿using Confluent.Kafka;
+using Magnus.Futbot.Common.Models.Kafka.Serialization;
 using Microsoft.Extensions.Configuration;
 using System.Net;
 
@@ -15,7 +16,9 @@ namespace Magnus.Futbot.Common.Models.Kafka
                 ClientId = Dns.GetHostName(),
             };
 
-            Producer = new ProducerBuilder<TKey, TValue>(config).Build();
+            Producer = new ProducerBuilder<TKey, TValue>(config)
+                .SetValueSerializer(new Serializer<TValue>())
+                .Build();
         }
 
         public IProducer<TKey, TValue> Producer { get; }
