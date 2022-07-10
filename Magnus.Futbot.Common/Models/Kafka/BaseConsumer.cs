@@ -18,7 +18,7 @@ namespace Magnus.Futbot.Common.Models.Kafka
             };
 
             Consumer = new ConsumerBuilder<TKey, TValue>(config)
-                .SetValueDeserializer(new Deserializer<TValue>)
+                .SetValueDeserializer(new Deserializer<TValue>())
                 .Build();
             Consumer.Subscribe(Topic);
         }
