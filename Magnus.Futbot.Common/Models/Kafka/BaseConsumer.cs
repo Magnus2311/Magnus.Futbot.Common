@@ -31,5 +31,13 @@ namespace Magnus.Futbot.Common.Models.Kafka
         public abstract string Topic { get; }
 
         protected IConfiguration Configuration { get; }
+
+        public void Subscribe()
+        {
+            Consumer.Subscribe(Topic);
+        }
+
+        public ConsumeResult<TKey, TValue> Consume(CancellationToken cancellationToken = default)
+            => Consumer.Consume(cancellationToken);
     }
 }
