@@ -21,7 +21,6 @@ namespace Magnus.Futbot.Common.Models.Kafka
             Consumer = new ConsumerBuilder<TKey, TValue>(config)
                 .SetValueDeserializer(new Deserializer<TValue>())
                 .Build();
-            Consumer.Subscribe(Topic);
         }
 
         public IConsumer<TKey, TValue> Consumer { get; }
@@ -40,7 +39,8 @@ namespace Magnus.Futbot.Common.Models.Kafka
 
         public ConsumeResult<TKey, TValue> Consume(CancellationToken cancellationToken = default)
         {
-            while(!cancellationToken.IsCancellationRequested)
+            Consumer.Subscribe(Topic);
+            while (!cancellationToken.IsCancellationRequested)
             {
                 try
                 {
