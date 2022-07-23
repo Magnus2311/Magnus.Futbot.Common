@@ -39,6 +39,20 @@ namespace Magnus.Futbot.Common.Models.Kafka
         }
 
         public ConsumeResult<TKey, TValue> Consume(CancellationToken cancellationToken = default)
-            => Consumer.Consume(cancellationToken);
+        {
+            while(!cancellationToken.IsCancellationRequested)
+            {
+                try
+                {
+                    return Consumer.Consume(cancellationToken);
+                }
+                catch (ConsumeException ex)
+                {
+                    // Log if it is missing topic   
+                }
+            }
+
+            return new ConsumeResult<TKey, TValue>();
+        }
     }
 }
