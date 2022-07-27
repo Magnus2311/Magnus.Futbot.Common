@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <Company>Magnus2311</Company>
     <Product>Magnus.Futbot</Product>
-    <Version>0.0.13</Version>
+    <Version>0.0.14</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>Magnus2311.Futbot.Common</PackageId>
     <Authors>Magnus.Futbot.Common</Authors>
