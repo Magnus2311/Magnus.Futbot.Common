@@ -1,6 +1,7 @@
 ﻿using Confluent.Kafka;
 using Magnus.Futbot.Common.Models.Kafka.Serialization;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 
 namespace Magnus.Futbot.Common.Models.Kafka
 {
@@ -48,7 +49,7 @@ namespace Magnus.Futbot.Common.Models.Kafka
                 }
                 catch (ConsumeException ex)
                 {
-                    // Log if it is missing topic   
+                    Console.WriteLine(JsonConvert.SerializeObject(ex));
                 }
             }
 
