@@ -12,7 +12,7 @@ namespace Magnus.Futbot.Common.Models.DTOs
         public int TransferListCount { get; set; }
         public int UnassignedCount { get; set; }
         public int Outbidded { get; set; }
-        public ObjectId UserId { get; set; }
+        public string UserId { get; set; }
 
         public override int GetHashCode()
             => HashCode.Combine(Email);

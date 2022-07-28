@@ -14,6 +14,6 @@ namespace Magnus.Futbot.Common.Models.Results
 
         public string Email { get; }
         public ConfirmationCodeStatusType ConfirmationCodeStatus { get; }
-        public ObjectId UserId { get; }
+        public string UserId { get; }
     }
 }

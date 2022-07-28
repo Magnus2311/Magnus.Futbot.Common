@@ -6,6 +6,6 @@ namespace Magnus.Futbot.Common.Models.Selenium.Profiles
     {
         public string Email { get; set; } = string.Empty;
         public string Code { get; set; } = string.Empty;
-        public ObjectId UserId { get; set; }
+        public string UserId { get; set; } = string.Empty;
     }
 }
