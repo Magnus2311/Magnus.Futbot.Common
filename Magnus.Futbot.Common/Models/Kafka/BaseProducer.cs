@@ -32,5 +32,8 @@ namespace Magnus.Futbot.Common.Models.Kafka
 
         public Task Produce(TValue value, CancellationToken cancellationToken)
             => Producer.ProduceAsync(Topic, new Message<TKey, TValue> { Value = value }, cancellationToken);
+
+        public Task Produce(TKey key, TValue value, CancellationToken cancellationToken)
+            => Producer.ProduceAsync(Topic, new Message<TKey, TValue> { Key = key, Value = value }, cancellationToken);
     }
 }
